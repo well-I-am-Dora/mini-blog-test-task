@@ -1,0 +1,15 @@
+type Mutation {
+    createPost(input: PostInput!): Post!
+    createComment(input: CommentInput!): Comment!
+}
+
+input PostInput {
+    text: String!
+    commentsAllowed: Boolean!
+}
+
+input CommentInput {
+    text: String!
+    postID: ID!
+    parentCommentID: ID
+}

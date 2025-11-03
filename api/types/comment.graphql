@@ -1,0 +1,6 @@
+type Comment @goModel(model: "github.com/martyushova/posts/internal/model.Comment") {
+    id: ID!
+    userID: ID!
+    parentCommentID: ID
+    text: String!
+}

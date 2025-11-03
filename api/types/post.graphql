@@ -1,0 +1,6 @@
+type Post @goModel(model: "github.com/martyushova/posts/internal/model.Post") {
+    id: ID!
+    text: String!
+    commentsAllowed: Boolean!
+    comments(limit: Int!, offset: Int!): [Comment!]! @goField(forceResolver: true)
+}

@@ -1,0 +1,40 @@
+schema:
+  - api/**/*.graphql
+
+exec:
+  package: api
+  layout: single-file
+
+  filename: internal/api/generated.go
+
+model:
+  filename: internal/model/graphql/generated.go
+  package: model
+
+resolver:
+  package: api
+  layout: follow-schema
+  dir: internal/api
+  filename_template: "{name}.resolvers.go"
+
+call_argument_directives_with_null: true
+
+autobind:
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  UUID:
+    model:
+      - github.com/99designs/gqlgen/graphql.String
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int64:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64

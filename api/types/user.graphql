@@ -1,0 +1,4 @@
+type User @goModel(model: "github.com/martyushova/posts/internal/model.User"){
+    id: ID!
+    name: String!
+}
