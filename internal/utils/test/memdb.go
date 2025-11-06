@@ -40,7 +40,7 @@ func getMemDBSchema() *memdb.DBSchema {
 					},
 					"post_id": {
 						Name:    "post_id",
-						Unique:  true,
+						Unique:  false,
 						Indexer: &memdb.UUIDFieldIndex{Field: "PostID"},
 					},
 				},
